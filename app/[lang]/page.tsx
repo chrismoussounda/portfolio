@@ -44,7 +44,8 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           <a href="#parcours">{t.nav.career}</a>
           <a href="#labo">{t.nav.lab}</a>
           <a href="#contact">{t.nav.contact}</a>
-          <Link href={`/${other}`} hrefLang={other} aria-label={t.lang.label}>{t.lang.other}</Link>
+          {/* plain link: a full load starts the other language at the top (Link's scroll jumped past the nav) */}
+          <a href={`/${other}`} hrefLang={other} lang={other} aria-label={t.lang.label}>{t.lang.other}</a>
           <ThemeToggle label={t.theme.label} light={t.theme.light} dark={t.theme.dark} />
         </nav>
       </header>

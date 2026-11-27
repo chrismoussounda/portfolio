@@ -33,7 +33,7 @@ export default async function Image({ params }: { params: Promise<{ lang: string
   return new ImageResponse(
     (
       <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", background: "#f4ead5" }}>
-        <div style={{ display: "flex", height: 16 }}>
+        <div style={{ display: "flex", height: 8 }}>
           <div style={{ flex: 4, background: "#00955e" }} />
           <div style={{ flex: 2, background: "#ffd23f" }} />
           <div style={{ flex: 4, background: "#e4312b" }} />
