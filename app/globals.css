@@ -1,4 +1,4 @@
-/* ---------- Tokens: painted-sign palette ---------- */
+/* ---------- Tokens: painted-sign palette (light by default; dark only when chosen) ---------- */
 :root {
   --wall: #f4ead5;
   --paint: #fff7e6;
@@ -15,15 +15,6 @@
   --narrow: var(--font-narrow), "Arial Narrow", Arial, sans-serif;
   --sans: var(--font-sans), Arial, sans-serif;
   color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --wall: #141414;
-    --paint: #1f1d1a;
-    --k: #f4ead5;
-    --muted: #bdb5a4;
-    color-scheme: dark;
-  }
 }
 :root[data-theme="dark"] {
   --wall: #141414;

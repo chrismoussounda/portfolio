@@ -5,20 +5,14 @@ import { useEffect, useState, useSyncExternalStore } from "react";
 type Theme = "light" | "dark";
 const THEME_EVENT = "themechange";
 
+// Light is the default; dark only when the visitor chose it.
 function readTheme(): Theme {
-  const set = document.documentElement.dataset.theme;
-  if (set === "light" || set === "dark") return set;
-  return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
 }
 
 function subscribeTheme(onChange: () => void) {
-  const media = matchMedia("(prefers-color-scheme: dark)");
-  media.addEventListener("change", onChange);
   window.addEventListener(THEME_EVENT, onChange);
-  return () => {
-    media.removeEventListener("change", onChange);
-    window.removeEventListener(THEME_EVENT, onChange);
-  };
+  return () => window.removeEventListener(THEME_EVENT, onChange);
 }
 
 export function ThemeToggle({ label, light, dark }: { label: string; light: string; dark: string }) {
