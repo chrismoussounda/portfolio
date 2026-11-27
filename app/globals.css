@@ -90,7 +90,7 @@ dd {
   line-height: 1.5;
 }
 .stripe {
-  height: 12px;
+  height: 6px;
   background: linear-gradient(115deg, var(--leaf) 0 40%, var(--sun) 40% 60%, var(--red) 60%);
 }
 
