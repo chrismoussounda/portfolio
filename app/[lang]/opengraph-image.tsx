@@ -13,7 +13,13 @@ export async function generateImageMetadata({ params }: { params: Promise<{ lang
   return [{ id: "sign", alt: dict[l].meta.ogAlt, size, contentType }];
 }
 
+// Read once at module load: with cacheComponents, uncached IO inside the handler fails in production.
 const font = (file: string) => readFile(join(process.cwd(), "assets/fonts", file));
+const [slab, narrow, sans] = await Promise.all([
+  font("alfaslab.ttf"),
+  font("archivonarrow-700.ttf"),
+  font("worksans-600.ttf"),
+]);
 
 const k = "#141414";
 const cream = "#fff7e6";
@@ -22,11 +28,6 @@ export default async function Image({ params }: { params: Promise<{ lang: string
   const { lang } = await params;
   const l: Locale = hasLocale(lang) ? lang : "fr";
   const t = dict[l];
-  const [slab, narrow, sans] = await Promise.all([
-    font("alfaslab.ttf"),
-    font("archivonarrow-700.ttf"),
-    font("worksans-600.ttf"),
-  ]);
   const shadow = `6px 6px 0 ${k}, -2px -2px 0 ${k}, 2px -2px 0 ${k}, -2px 2px 0 ${k}, 2px 2px 0 ${k}`;
 
   return new ImageResponse(
