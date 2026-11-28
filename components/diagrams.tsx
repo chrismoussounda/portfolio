@@ -14,7 +14,7 @@ const labels = {
     again: "rappel ×2",
     pay: "Payer",
     ago: "−30 j",
-    now: "maint.",
+    now: "auj.",
   },
   en: {
     offline: "offline",
