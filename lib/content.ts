@@ -145,7 +145,7 @@ export const archives: { name: string; text: L; role: L; link?: string }[] = [
     name: "Daxium Connect",
     text: {
       fr: "Connecteurs reliant Daxium Air aux systèmes des clients.",
-      en: "Middleware connecting Daxium Air to clients' systems.",
+      en: "Connectors linking Daxium Air to clients' systems.",
     },
     role: { fr: "Ginov", en: "Ginov" },
   },
@@ -306,7 +306,7 @@ export const dict = {
       bubble: "“The network can drop. The app can't.”",
       menu: ["Web", "Mobile", "AI", "Payments", "Offline"],
     },
-    intro: "I build apps that hold up in production: justice, health, insurance. I work from the database to the interface, remotely, in French or English.",
+    intro: "I build apps that hold up in production: justice, health, insurance. I work from the database to the interface, remotely, in French and English.",
     cta: { mail: "Send a message", work: "See the work" },
     card: {
       status: ["Status", "Available"],
@@ -340,7 +340,7 @@ export const dict = {
     production: { title: "The work", note: "Platforms for government and business", role: "Role:", client: "Client", live: "In production", building: "In development" },
     career: { title: "Career", note: "" },
     archives: { title: "Before that", note: "" },
-    lab: { title: "The lab", note: "Open-source projects: code you can read", live: "Demo", code: "Code" },
+    lab: { title: "The lab", note: "Open-source projects: the code is open to all", live: "Demo", code: "Code" },
     contact: { title: "Got a project? Let's talk.", text: "Tell me about it in a few lines and I'll reply within 24 hours." },
     footer: "Hand-painted in Brazzaville by Christoffert Moussounda.",
   },
